@@ -37,8 +37,8 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
 
             this.Employee = new Employee();
-            this.Employee.Name = "比嘉　哲平";
-            this.Employee.Password = "Higa0001";
+            this.Employee.Name = "";
+            this.Employee.Password = "";
         }
 
         #region LogonCommand
