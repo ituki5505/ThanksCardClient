@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ThanksCardClient.Models;
-using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -15,12 +14,12 @@ namespace ThanksCardClient.ViewModels
     {
         private IRegionManager regionManager;
 
-        #region UserProperty
-        private User _User;
-        public User User
+        #region EmployeeProperty
+        private Employee _Employee;
+        public Employee Employee
         {
-            get { return _User; }
-            set { SetProperty(ref _User, value); }
+            get { return _Employee; }
+            set { SetProperty(ref _Employee, value); }
         }
         #endregion
 
@@ -37,10 +36,9 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager = regionManager;
 
-            // 開発中のみアカウントを admin/admin でセットしておく。
-            this.User = new User();
-            this.User.Name = "admin";
-            this.User.Password = "admin";
+            this.Employee = new Employee();
+            this.Employee.Name = "比嘉　哲平";
+            this.Employee.Password = "Higa0001";
         }
 
         #region LogonCommand
@@ -50,17 +48,12 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteLogonCommandAsync()
         {
-            User authorizedUser = await this.User.LogonAsync();
+            Employee authorizedEmployee = await this.Employee.LogonAsync();
 
-            // authorizedUser が null でなければログオンに成功している。
-            if (authorizedUser != null)
+            if (authorizedEmployee != null)
             {
-                SessionService.Instance.IsAuthorized = true;
-                SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
-                this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
             else
             {
