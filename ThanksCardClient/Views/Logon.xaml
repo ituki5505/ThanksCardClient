@@ -16,6 +16,7 @@
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding Employee.Password}"/>
             <Button Content="Logon" Command="{Binding LogonCommand}"/>
+            <Button Content="クリア" Command="{Binding Cleacommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
