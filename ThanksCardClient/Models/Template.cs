@@ -8,5 +8,6 @@ namespace ThanksCardClient.Models
 {
     internal class Template
     {
+        #region
     }
 }

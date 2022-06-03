@@ -11,12 +11,20 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="Name:" />
             <TextBox Text="{Binding Employee.Name}"/>
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding Employee.Password}"/>
-            <Button Content="ログオン" Command="{Binding LogonCommand}"/>
-            <Button Content="クリア" Command="{Binding Cleacommand}"/>
+            <StackPanel Orientation="Horizontal">
+                <Canvas>
+                    <Button Content="ログイン" Command="{Binding LogonCommand}" Canvas.Left="500"  Width="118"/>
+                </Canvas>
+                <Canvas>
+                    <Button Content="クリア" Command="{Binding Cleacommand}" Width="122" Canvas.Left="650"/>
+                </Canvas>
+            </StackPanel>
+
         </StackPanel>
+
     </Grid>
 </UserControl>
