@@ -49,7 +49,7 @@ namespace ThanksCardClient.Models
 
         #region BelongParentProperty
         private Belong _Parent;
-        public virtual Belong Parent
+        public Belong Parent
         {
             get { return _Parent; }
             set { SetProperty(ref _Parent, value); }
