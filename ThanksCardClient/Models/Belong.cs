@@ -48,7 +48,7 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region BelongParentProperty
-        private  Belong _Parent;
+        private Belong _Parent;
         public virtual Belong Parent
         {
             get { return _Parent; }

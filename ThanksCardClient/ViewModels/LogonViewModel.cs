@@ -23,6 +23,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+
         #region ErrorMessage
         private string _ErrorMessage;
         public string ErrorMessage
@@ -31,14 +32,13 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _ErrorMessage, value); }
         }
         #endregion
-
         public LogonViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
 
             this.Employee = new Employee();
-            this.Employee.Name = "";
-            this.Employee.Password = "";
+            this.Employee.Name = "比嘉哲平";
+            this.Employee.Password = "Higa0001";
         }
 
         #region LogonCommand
