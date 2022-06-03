@@ -15,10 +15,15 @@
             <TextBox Text="{Binding User.Name}"/>
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding User.Password}"/>
-            <Button Content="ログイン" Command="{Binding LogonCommand}" Click="Button_Click"/>
-            <Button Content="クリア" Command="{Binding Cleacommand}"/>
-            <PasswordBox x:Name="passwordBox" Width="300" PasswordChar="#"/>
-           
+            <StackPanel Orientation="Horizontal">
+                <Canvas>
+                    <Button Content="ログイン" Command="{Binding LogonCommand}" Canvas.Left="500" Click="Button_Click" Width="118"/>
+                </Canvas>
+                <Canvas>
+                    <Button Content="クリア" Command="{Binding Cleacommand}" Width="122" Canvas.Left="650"/>
+                    </Canvas>
+            </StackPanel>
+
         </StackPanel>
         
     </Grid>
